@@ -62,19 +62,8 @@
     }
   }
 
-  document.addEventListener('visibilitychange', () => {
-    if (document.visibilityState === 'visible' && pendingPlay) {
-      pendingPlay = false;
-      chrome.runtime.sendMessage({ type: 'SPOTIFY_NEEDS_PLAY' }).catch(() => {});
-    }
-  });
-
   function handlePlayIfVisible() {
-    if (document.visibilityState === 'visible') {
-      chrome.runtime.sendMessage({ type: 'SPOTIFY_NEEDS_PLAY' }).catch(() => {});
-    } else {
-      pendingPlay = true;
-    }
+    chrome.runtime.sendMessage({ type: 'SPOTIFY_NEEDS_PLAY' }).catch(() => {});
   }
 
   // 1. Direct explicit click on the PAUSE button

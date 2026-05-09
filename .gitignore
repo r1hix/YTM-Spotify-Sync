@@ -63,7 +63,6 @@ $RECYCLE.BIN/
 # End of https://www.toptal.com/developers/gitignore/api/macos,windows
 
 manifest-chrome.json
-manifest.json
 use-firefox.bat
 use-firefox.sh
 README.md
